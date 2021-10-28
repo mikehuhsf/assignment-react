@@ -1,0 +1,40 @@
+import React, { Component } from "react";
+import GameListItem from "./GameListItem";
+
+export default class GameList extends Component {
+  // eslint-disable-next-line no-useless-constructor
+  constructor(props) {
+    super(props);
+
+    this.state = { games: []}
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:5000/api/v1/games")
+    .then((response) => response.json())
+    .then((result) => this.setState({ games: result}))
+  }
+
+  renderGames() {
+      return this.state.games.map((game) => (
+          <GameListItem
+            key={game.id}
+            id={game.id}
+            title={game.title}
+            ></GameListItem>
+      ));
+  
+  }
+  
+  render () {
+      return(
+      <>
+        <h5>Games</h5>
+        {this.renderGames()}
+
+      </>
+      );
+  }
+  
+
+  }

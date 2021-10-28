@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import PropTypes from "prop-types";
-import DoctorDetails from "./GameDetails"
 import GameDetails from './GameDetails';
 
 function GameListItem({id, title}) {
-    const [details, setDetails] =useState(null); 
+    const [details, setDetails] =useState(null);
+
+
 
     function handleLoadDetails() {
-        //fetch(`http://localhost:5000/v1/doctor/${id}`)
-        fetch(`https://stormy-eyrie-59187.herokuapp.com/v1/doctor/${id}`)
+        fetch(`http://localhost:5000/api/v1/games/${id}`)
+        //fetch(`https://stormy-eyrie-59187.herokuapp.com/v1/doctor/${id}`)
           .then((response) => response.json())
           .then((response) => setDetails(response));
       }
@@ -25,6 +26,7 @@ function GameListItem({id, title}) {
                 platforms = {details.platforms}
                 />
             )
+            
         }
     </div>
     );
