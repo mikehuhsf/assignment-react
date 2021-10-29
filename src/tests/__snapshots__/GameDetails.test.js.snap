@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`display's platform support when it exists 1`] = `
+Array [
+  <h5>
+    Release Date: 
+    010101
+  </h5>,
+  <h5>
+    Platforms: 
+    <br />
+    <blockquote>
+       PS5: 
+      NO
+       
+      <br />
+      XBOX Series X: 
+      NO
+       
+      <br />
+      Nintendo Switch: 
+      NO
+       
+      <br />
+      PC (Windows): 
+      YES
+      <br />
+      PC (macOS): 
+      NO
+       
+      <br />
+      PC (Linux): 
+      NO
+       
+    </blockquote>
+  </h5>,
+]
+`;
