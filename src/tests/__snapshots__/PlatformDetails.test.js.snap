@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`display specificaions info when there is one 1`] = `
+Array [
+  <h5>
+    Release Date: 
+    2021-09-24
+  </h5>,
+  <h5>
+    Specifications: 
+    <br />
+    <blockquote>
+      Manufacturer: 
+      Apple
+       
+      <br />
+      Storage Capacity: 
+      128 GB
+       
+      <br />
+      GPU: 
+      A1
+      <br />
+      CPU: 
+      A1
+        
+    </blockquote>
+  </h5>,
+]
+`;

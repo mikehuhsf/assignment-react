@@ -5,7 +5,7 @@ import { shallow } from './tools/testSetup';
 describe('App container', () => {
   it('should render without any problem', () => {
     const wrapper = shallow(<App name="Cohort Fantastic" />);
-    expect(wrapper.find('Provider').length).toBe(1);
+    expect(wrapper.find('GameList').length).toBe(1);
   });
 });
 

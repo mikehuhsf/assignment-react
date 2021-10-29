@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import PlatformDetails from './PlatformDetails';
+import PlatformDetails from '../components/PlatformDetails';
 import { specifications } from '../tools/mockSpecifications';
 
 it('display specificaions info when there is one', () => {

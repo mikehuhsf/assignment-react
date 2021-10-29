@@ -8,7 +8,7 @@ function PlatformListItem({id, name}) {
 
 
     function handleLoadDetails() {
-        fetch(`http://localhost:5000/api/v1/platforms/${id}`)
+        fetch(`https://boiling-mountain-01737.herokuapp.com//api/v1/platforms/${id}`)
         //fetch(`https://stormy-eyrie-59187.herokuapp.com/v1/doctor/${id}`)
           .then((response) => response.json())
           .then((response) => setDetails(response));

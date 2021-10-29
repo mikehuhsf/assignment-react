@@ -10,7 +10,7 @@ export default class PlatformList extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:5000/api/v1/platforms")
+    fetch("https://boiling-mountain-01737.herokuapp.com//api/v1/platforms")
     .then((response) => response.json())
     .then((result) => this.setState({ platforms: result}))
   }

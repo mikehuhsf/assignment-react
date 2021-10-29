@@ -10,7 +10,7 @@ export default class GameList extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:5000/api/v1/games")
+    fetch("https://boiling-mountain-01737.herokuapp.com//api/v1/games")
     .then((response) => response.json())
     .then((result) => this.setState({ games: result}))
   }
