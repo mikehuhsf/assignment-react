@@ -7,9 +7,9 @@ function App(props) {
   <>
   <h1>Team 115's Awesome Assignment</h1>
   <GameList/>
-  <PlatformsList/>
+  <PlatformList/>
   </>
   )
 }
-
+//
 export default App;

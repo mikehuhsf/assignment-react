@@ -29,7 +29,7 @@ export default class GameList extends Component {
   render () {
       return(
       <>
-        <h5>Games</h5>
+        <h2>Games</h2>
         {this.renderGames()}
 
       </>

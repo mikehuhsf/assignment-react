@@ -1,28 +1,45 @@
-import React, { useState, useEffect } from "react";
-import PlatformListItem from "./PlatformListItem";
+import React, { useState } from "react";
 
-const PlatformsList = () => {
-  const [Platforms, setPlatforms] = useState(null);
+const PlatformListItem = ({ platform }) => {
+  const [GamesList, setGamesList] = useState(null);
 
-  const fetchPlatforms = () => {
-    fetch("http://localhost:5000/v1/Platforms")
+  const GQL_API = `http://localhost:3030/`;
+  const GQL_QUERY = `
+    query($id: ID!){
+      platform(id: $id){
+        name
+        release_date
+        specifications
+      }
+    }`;
+
+  const handleLoadGames = () => {
+    const variables = { id: platform.id };
+    fetch(GQL_API, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: GQL_QUERY,
+        variables,
+      }),
+    })
       .then((response) => response.json())
-      .then((result) => setPlatforms(result));
+      .then((result) => setGamesList(result.data.Platform.games));
   };
 
-  useEffect(() => {
-    fetchPlatforms();
-  }, []);
-
   return (
-    <>
-      <h2>Platforms List</h2>
-      {Platforms &&
-        Platforms.map((Platform) => (
-          <PlatformListItem key={Platform.id} Platform={Platform} />
-        ))}
-    </>
+    <div>
+      <a href="#" onClick={handleLoadGames}>
+        {platform.name}
+      </a>
+      {GamesList &&
+        GamesList.map((Game) => {
+          return <div key={Game.id}>{Game.name}</div>;
+        })}
+    </div>
   );
 };
 
-export default PlatformsList;
+//export default PlatformListItem;
