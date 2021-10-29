@@ -23,7 +23,7 @@ function PlatformListItem({id, name}) {
             details && (
                 <PlatformDetails
                 release_date = {details.release_date}
-                platforms = {details.platforms}
+                specifications = {details.specifications}
                 />
             )
             

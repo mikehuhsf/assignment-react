@@ -1,5 +1,5 @@
 import GameList from './components/GameList' 
-import PlatformsList from './components/PlatformListItem';
+import PlatformList from './components/PlatformListRest';
 import './App.css';
 
 function App(props) {

@@ -15,12 +15,12 @@ export default class PlatformList extends Component {
     .then((result) => this.setState({ platforms: result}))
   }
 
-  renderGames() {
+  renderPlatforms() {
       return this.state.platforms.map((platform) => (
           <PlatformListItem
             key={platform.id}
             id={platform.id}
-            title={platform.title}
+            name={platform.name}
             ></PlatformListItem>
       ));
   
@@ -29,8 +29,8 @@ export default class PlatformList extends Component {
   render () {
       return(
       <>
-        <h2>platforms</h2>
-        {this.renderGames()}
+        <h2>Platforms</h2>
+        {this.renderPlatforms()}
 
       </>
       );

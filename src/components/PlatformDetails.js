@@ -1,7 +1,7 @@
 import React from "react"
 
 const PlatformDetails = ({ name, release_date, specifications}) => {
-    const { manufacturer, storage_capacity, GPU, CPU} = platforms;
+    const { manufacturer, storage_capacity, GPU, CPU} = specifications;
 
     return (
         <>
