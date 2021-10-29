@@ -1,8 +1,11 @@
-import { render, screen } from '@testing-library/react';
+import React from 'react';
 import App from './App';
+import { shallow } from './tools/testSetup';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('App container', () => {
+  it('should render without any problem', () => {
+    const wrapper = shallow(<App name="Cohort Fantastic" />);
+    expect(wrapper.find('Provider').length).toBe(1);
+  });
 });
+
